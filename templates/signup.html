@@ -1,0 +1,30 @@
+<h1>{{title}}</h1>
+<form action="/login">
+    <input
+        type="text"
+        ng-model="Name"
+        placeholder="Name"
+    />
+    <input
+        type="text"
+        ng-model="username"
+        placeholder="username"
+    />
+    <input
+        type="email"
+        ng-model="email"
+        placeholder="mail@email.com"
+        required
+    />
+    <input
+        type="password"
+        ng-model="password"
+        placeholder="min. length - 6"
+    />
+    <input
+        type="submit"
+        value="Sign Up"
+        ng-click="submitted()"
+        ui-sref="login"
+    />
+</form>

@@ -1,0 +1,31 @@
+{
+	"manifest_version" : 2,
+	"name" : "Amazon Ext",
+	"version" : "1.0", 
+	"description" : "A trial first extension",
+	"background": {
+		"scripts": [
+		"static/jquery-3.6.0.min.js",
+		"static/ajax-min.js",
+		"background.js"
+		],
+		"persistent": false
+	},
+	"content_scripts": [
+		{
+		"matches": ["https://www.amazon.in/*" , "https://*.amazon.com/*"],
+		"js": ["content.js" , "static/jquery-3.6.0.min.js", "static/ajax-min.js", "static/angular-ui-router.min.js", "static/angular.min.js"]
+		}
+	],
+	"browser_action":{
+		"default_popup": "popup.html"
+	},
+	"content_security_policy": "script-src 'self' https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js; object-src 'self'",
+	"permissions": [
+		"tabs",
+		"activeTab",
+		"<all_urls>",
+		"storage"
+	]
+    
+}
